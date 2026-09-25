@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf9f5">
+  <meta name="description" content="Discover thoughtfully chosen home goods, accessories, and everyday favorites at Gather & Goods.">
+  <title>Gather & Goods — Good things. Everyday joy.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="products.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6L12 2Z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C8 2 2 8 5 15s16 7 15-12Z"/><path d="M3 22 15 10"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="3" y="15" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v11H3V10Z"/><path d="M9 21v-8h6v8"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4c-1 4-7 4-8 0Z"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="m15 4 5 5M3 21l6-1L21 8l-5-5L4 15l-1 6Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#shop">Skip to products</a>
+  <div class="announcement"><span>Thoughtful finds. A little everyday joy.</span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span class="announcement-extra">Welcome to your new favorite corner.</span></div>
+  <header class="site-header" id="top">
+    <div class="header-inner container">
+      <a class="brand" href="#top" aria-label="Gather and Goods home"><span class="brand-mark" aria-hidden="true">g.</span><span>gather<span class="brand-amp">&</span>goods<span class="brand-dot">.</span></span></a>
+      <form class="search-form" role="search" id="search-form">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="search-input">Search products</label>
+        <input id="search-input" type="search" placeholder="Find your next favorite thing…" autocomplete="off">
+        <button class="search-submit" type="submit" aria-label="Search products"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </form>
+      <div class="header-actions">
+        <button class="header-action" id="favorites-toggle" type="button" aria-pressed="false" aria-label="Show saved products"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span>Saved</span><span class="small-count" id="saved-count" hidden>0</span></button>
+        <span class="header-divider" aria-hidden="true"></span>
+        <button class="header-action" id="cart-open" type="button" aria-label="Open shopping bag, 0 items"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span>Bag</span><span class="cart-count" id="cart-count">0</span></button>
+      </div>
+    </div>
+    <nav class="main-nav container" aria-label="Main navigation">
+      <a class="nav-shop" href="#shop" data-nav-category="all"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>Shop all</a>
+      <a href="#shop" data-nav-category="Home & Living">Home & living</a>
+      <a href="#shop" data-nav-category="Accessories">Accessories</a>
+      <a href="#shop" data-nav-category="Clothing">Clothing</a>
+      <a href="#shop" data-nav-category="Art & Stationery">Art & stationery</a>
+      <a class="nav-about" href="#our-story">A little about us <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="tiny-flower" aria-hidden="true">✳</span> THE LITTLE THINGS MATTER</span>
+        <h1 id="hero-heading">Good things.<br>Everyday <span>joy.</span></h1>
+        <p>For your home, your wardrobe, and all the moments in between. Find something that feels a little more you.</p>
+        <a class="button button-dark" href="#shop" data-nav-category="all">Explore the shop <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="hero-note"><span class="note-line" aria-hidden="true"></span> A few favorites. Endless possibilities.</div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/hero.jpg" alt="A warm living space with natural wood, soft linen, and thoughtful decorative details" fetchpriority="high" width="900" height="850">
+        <div class="hero-sticker"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span>Less ordinary.<br>More <em>you.</em></span></div>
+        <a class="hero-caption" href="#shop" data-nav-category="Home & Living"><span><small>MAKE YOURSELF AT HOME</small>Comfort, with a little character.</span><span class="caption-arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </section>
+
+    <div class="values-strip container" aria-label="Our approach">
+      <span><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Thoughtfully chosen</span>
+      <span><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>Made for everyday moments</span>
+      <span><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg>A little less ordinary</span>
+    </div>
+
+    <section class="shop-section container" id="shop" aria-labelledby="shop-heading">
+      <div class="section-heading"><div><span class="eyebrow">THE GOOD STUFF, ALL IN ONE PLACE</span><h2 id="shop-heading">Find your next favorite<span class="accent">.</span></h2></div><p>Little finds. Lots to love.</p></div>
+      <div class="shop-controls">
+        <div class="category-filters" role="group" aria-label="Filter products by category">
+          <button class="category-button active" data-category="all" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>All finds</button>
+          <button class="category-button" data-category="Home & Living" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Home & living</button>
+          <button class="category-button" data-category="Accessories" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>Accessories</button>
+          <button class="category-button" data-category="Clothing" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-shirt"/></svg>Clothing</button>
+          <button class="category-button" data-category="Art & Stationery" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>Art & stationery</button>
+        </div>
+      </div>
+      <div class="results-toolbar">
+        <p id="results-count" role="status" aria-live="polite"></p>
+        <div class="sort-control"><label for="sort-select">Sort by:</label><select id="sort-select"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A to Z</option></select></div>
+      </div>
+      <div id="active-filters" class="active-filters" hidden><span id="filter-description"></span><button class="text-button" id="clear-filters">Clear filters <span aria-hidden="true">×</span></button></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="empty-state" id="empty-state" hidden><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 id="empty-heading">No finds just yet.</h3><p id="empty-message">Try another search or explore a different category.</p><button class="button button-dark" id="reset-search">Explore all products</button></div>
+      <div class="load-more-wrap" id="load-more-wrap"><button class="button button-outline" id="load-more">A few more good things <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button><p id="showing-count"></p></div>
+      <noscript><p class="noscript-notice">Please enable JavaScript to browse products and use the shopping bag.</p></noscript>
+    </section>
+
+    <section class="story-section container" id="our-story" aria-labelledby="story-heading">
+      <div class="story-art" aria-hidden="true"><span class="story-flower">✳</span><span class="story-art-text">good things<br>live here.</span><span class="story-squiggle">↝</span></div>
+      <div class="story-copy"><span class="eyebrow">A SMALL SHOP. A LOT OF HEART.</span><h2 id="story-heading">Life's better with<br>a little character.</h2><p>We believe the things you surround yourself with should make you smile. A favorite mug. Your go-to tote. That perfect little touch for your home.</p><p>Gather & Goods is a place for those everyday favorites. Take a look around. Make yourself at home.</p><a class="story-link" href="#shop" data-nav-category="all">Find something you love <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <div class="footer-top"><div><a class="brand footer-brand" href="#top"><span>gather<span class="brand-amp">&</span>goods<span class="brand-dot">.</span></span></a><p>Thoughtful finds for the everyday.</p></div><nav aria-label="Footer navigation"><a href="#shop" data-nav-category="all">Shop all</a><a href="#our-story">Our story</a><button class="text-button" id="footer-saved">Your saved finds</button><a href="#top">Back to top ↑</a></nav></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Gather & Goods.</span><span>Sample storefront · Checkout coming soon</span><span>Made with a little love <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span></div>
+  </footer>
+
+  <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-heading">
+    <div class="cart-header"><div><span class="eyebrow">YOUR GOOD FINDS</span><h2 id="cart-heading">Shopping bag <span id="cart-heading-count">(0)</span></h2></div><button class="icon-button" id="cart-close" aria-label="Close shopping bag"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><h3>A little room for joy.</h3><p>Your bag is empty. Let's find you something good.</p><button class="button button-dark" id="continue-shopping">Explore the shop <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+    <div class="cart-summary" id="cart-summary" hidden><div class="subtotal"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div><p class="cart-tax-note">Shipping and taxes are not included.</p><div class="checkout-note"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><div><strong>Checkout is coming soon</strong><p>You can build and save your bag here. Orders and payments aren't available yet.</p></div></div><button class="button button-outline" id="keep-browsing">Keep exploring <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+  </dialog>
+
+  <dialog class="product-dialog" id="product-dialog" aria-labelledby="detail-name"><button class="icon-button detail-close" id="detail-close" aria-label="Close product details"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button><div id="product-detail"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span id="toast-message"></span></div>
+</body>
